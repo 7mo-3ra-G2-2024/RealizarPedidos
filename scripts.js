@@ -13,7 +13,6 @@ function agregarAlCarrito(nombre, precio) {
     
     // Guardar el carrito actualizado en el localStorage
     localStorage.setItem('carrito', JSON.stringify(carrito));
-    
     // Actualizar la visualización del carrito
     actualizarCarrito();
 }
@@ -56,6 +55,17 @@ function realizarPedido() {
     localStorage.removeItem('carrito');
     actualizarCarrito();
 }
+
+function cancelarPedido(){
+    // Obtener el carrito actual del localStorage o inicializarlo si no existe
+    var carrito = JSON.parse(localStorage.getItem('carrito')) || [];
+    while(carrito.length > 0)
+        carrito.pop(); 
+    // Guardar el carrito actualizado en el localStorage
+    localStorage.setItem('carrito', JSON.stringify(carrito));
+    actualizarCarrito();  
+}
+
 function mostrarContacto() {
     var contacto = document.getElementById("contacto");
     if (contacto.style.display === "none") {
