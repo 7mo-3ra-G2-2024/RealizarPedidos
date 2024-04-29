@@ -1,11 +1,6 @@
 [
-    {"nombre": "Bondiola", "precio": 1000, "imagen":"https://www.paulinacocina.net/wp-content/uploads/2021/05/bondiola-a-la-cerveza.jpg"},
-    {"nombre": "Matambre", "precio": 1500, "imagen":"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSMPCatZ3oo4ELTvozR8-MobgFbgDoBVHglcB64Hs9Buw&s"},
-    {"nombre": "Choripan", "precio": 2000, "imagen":"https://as1.ftcdn.net/v2/jpg/03/67/42/44/1000_F_367424488_TXFw63RBf4dUViT5BJJ9D0cHuJg4qiYA.jpg"},
-    {"nombre": "Sándwich de lomo", "precio": 2500, "imagen": "https://media.timeout.com/images/106120335/750/562/image.webp"},
-    {"nombre": "Empanadas carne", "precio":2200, "imagen": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ1AlP6y31CsjFhnmF7-0afxuGcbmr9D5dgYdGG35fLXw&s"},
-    {"nombre": "Empanadas pollo", "precio":2200, "imagen": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS9grD6_TsGHK_VyYCWx3BAWbTtIqYDjFHtGQuPYaagwA&s"},
-    {"nombre": "Milanesa con pure", "precio":3000, "imagen": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTz_CXneDKBpWte9fQRgkq8JQSkyguBVBtRrlOFOfNNhw&s"},
-    {"nombre": "Bife con pure", "precio": 3200, "imagen": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTmR-M6JCfpkuBrKYVJ8ckkCWUEuxZwCXebDZReM1XyVg&s"},
-    {"nombre": "Costillitas", "precio": 5200, "imagen": "https://cdn7.kiwilimon.com/brightcove/9854/640x640/9854.jpg.webp"}
+    {"nombre": "Hamburguesa", "precio": 10},
+    {"nombre": "Empanadas", "precio": 15},
+    {"nombre": "Pizza", "precio": 20}
 ]
+ 

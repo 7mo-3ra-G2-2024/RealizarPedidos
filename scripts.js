@@ -13,6 +13,7 @@ function agregarAlCarrito(nombre, precio) {
     
     // Guardar el carrito actualizado en el localStorage
     localStorage.setItem('carrito', JSON.stringify(carrito));
+    
     // Actualizar la visualización del carrito
     actualizarCarrito();
 }
@@ -55,17 +56,6 @@ function realizarPedido() {
     localStorage.removeItem('carrito');
     actualizarCarrito();
 }
-
-function cancelarPedido(){
-    // Obtener el carrito actual del localStorage o inicializarlo si no existe
-    var carrito = JSON.parse(localStorage.getItem('carrito')) || [];
-    while(carrito.length > 0)
-        carrito.pop(); 
-    // Guardar el carrito actualizado en el localStorage
-    localStorage.setItem('carrito', JSON.stringify(carrito));
-    actualizarCarrito();  
-}
-
 function mostrarContacto() {
     var contacto = document.getElementById("contacto");
     if (contacto.style.display === "none") {
@@ -79,6 +69,20 @@ function mostrarProductos() {
     document.getElementById("productos").style.display = "block";
     // Oculta otros elementos si es necesario
 }
+function realizarPedido() {
+    // Aquí puedes agregar la lógica para realizar el pedido y registrar la ubicación
+    // Por ejemplo, podrías mostrar un formulario para que el cliente ingrese su ubicación
+    var ubicacion = prompt("Por favor, ingrese su ubicación:");
 
+    // Una vez que tienes la ubicación, podrías enviarla al servidor para procesar el pedido
+    // Esto podría ser a través de una solicitud AJAX o pasándola como parámetro en una redirección
+
+    // Por simplicidad, solo mostraremos un mensaje de confirmación aquí
+    if (ubicacion) {
+        alert("Su pedido ha sido realizado. Su ubicación: " + ubicacion);
+    } else {
+        alert("Por favor, ingrese una ubicación válida para proceder con el pedido.");
+    }
+}
     // Llama a la función para actualizar el carrito cuando la página se carga
     window.onload = actualizarCarrito;

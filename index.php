@@ -5,40 +5,19 @@
 <head>
     <meta charset="UTF-8">
     <title>Sistema de Pedidos</title>
-    <link rel="stylesheet" href="estilos.css">
+    <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
 
-<h1>Productos Disponibles</h1>
+<h1><svg class="w-6 h-6 text-gray-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+  <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 4h1.5L9 16m0 0h8m-8 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4Zm8 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4Zm-8.5-3h9.25L19 7H7.312"/>
+</svg>   
+    Productos Disponibles</h1>
     
 <div class="productos-container">
+    
     <?php
-        $productos_json = file_get_contents("productos.json");
-        $productos = json_decode($productos_json, true);
-        
-        foreach ($productos as $producto) {
-            echo "<div class='producto'>";
-            echo "<img src=".$producto['imagen']." width='150' height='100' >";
-            echo "<div class='producto-contenido'>";
-            echo "<h3>" . $producto['nombre'] . "</h3>";
-            echo "<p>Precio: $" . $producto['precio'] . "</p>";
-            echo "</div>";
-            echo "<button class='buton-carrito' onclick='agregarAlCarrito(\"" . $producto['nombre'] . "\", " . $producto['precio'] . ")'>";  
-    ?>
-    <svg width="24" height="24" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M39 32H13L8 12H44L39 32Z" fill="none"/><path d="M3 6H6.5L8 12M8 12L13 32H39L44 12H8Z" stroke="#fff" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/><circle cx="13" cy="39" r="3" stroke="#fff" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/><circle cx="39" cy="39" r="3" stroke="#fff" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/><path d="M22 22H30" stroke="#fff" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/><path d="M26 26V18" stroke="#fff" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/></svg>
-    <?php
-            echo "</button>";
-          
-            echo "</div>";
-        }
-    ?>
-</div>
-
-<div id="productos" style="display: none;">
-    <!-- Aquí se mostrarán los productos -->
-    <?php
-        // Código PHP para cargar los productos desde tu fuente de datos
+    
         $productos_json = file_get_contents("productos.json");
         $productos = json_decode($productos_json, true);
         
@@ -46,22 +25,21 @@
             echo "<div class='producto'>";
             echo "<h2>" . $producto['nombre'] . "</h2>";
             echo "<p>Precio: $" . $producto['precio'] . "</p>";
-            echo "<button onclick='agregarAlCarrito(\"". $producto['nombre'] . "\", " . $producto['precio'] . ")'>Agregar al CArrito</button>";
+            echo "<button onclick='agregarAlCarrito(\"" . $producto['nombre'] . "\", " . $producto['precio'] . ")'>Agregar al Carrito</button>";
             echo "</div>";
         }
     ?>
 </div>
 
-
 <div id="carrito">
     <h2>Carrito de Compras</h2>
     <ul id="lista-carrito"></ul>
     <p>Total: $<span id="total"></span></p>
-    <button class="buton" onclick="realizarPedido()">Realizar Pedido</button>
-    <button class="buton" onclick="cancelarPedido()">Cancelar Pedido</button>   
+    <button onclick="realizarPedido()">Realizar Pedido</button>
 </div>
-
-<script src="scripts.js">
-</script>
+<footer>
+  <center>Derechos reservados® </center> 
+</footer>
+<script src="scripts.js"></script>
 </body>
 </html>
